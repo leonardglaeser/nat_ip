@@ -8,7 +8,7 @@ class Remote {
     function __construct(){
         $this->ip = $_SERVER['REMOTE_ADDR'];
         $this->remoteHost =$_SERVER['REMOTE_HOST']?: gethostbyaddr($_SERVER["REMOTE_ADDR"]);
-        if(filter_var($this->ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6)){
+        if(filter_var($this->ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4)){
             $this->ipv4 = $this->ip;
             $this->ipv6_on =false;
         }
