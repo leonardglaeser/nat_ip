@@ -22,6 +22,7 @@ class Remote {
         return json_encode($this);
     }
 }
-$user = new Remote();
-echo $user->get_json()
+header("Content-Type: application/json");
+$remote = new Remote();
+echo $remote->get_json();
 ?>
